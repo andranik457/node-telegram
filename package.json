@@ -1,0 +1,21 @@
+{
+  "name": "node-telegram",
+  "version": "0.0.1",
+  "description": "Telegram Node API",
+  "main": "telegram-server.js",
+  "scripts": {
+    "start": "node telegram-server.js"
+  },
+  "author": "Andranik Aslanyan",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.1",
+    "globals": "^12.1.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.7.1",
+    "morgan": "^1.9.1",
+    "winston": "^3.2.1"
+  }
+}
