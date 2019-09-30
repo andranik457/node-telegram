@@ -12,13 +12,15 @@ const options = (db) => {
             bufferMaxEntries: parseInt(process.env[`MONGO_${db}_BUFFER_MAX_ENTRIES`] || 0),
             bufferCommands: process.env[`MONGO_${db}_BUFFER_COMMAND`] || false,
             connectTimeoutMS: parseInt(process.env[`MONGO_${db}_CONNECTION_TIMEOUT_MS`] || 30000),
-            poolSize: parseInt(process.env[`MONGO_${db}_POOL_SIZE`] || 50)
+            poolSize: parseInt(process.env[`MONGO_${db}_POOL_SIZE`] || 50),
+            useUnifiedTopology: true
         }
     };
 
     if (process.env[`MONGO_${db}_REPLICA_SET`]) {
         opt.options.replicaSet = process.env[`MONGO_${db}_REPLICA_SET`];
         opt.options.readPreference = process.env[`MONGO_${db}_READ_PREFERENCE`] || "secondaryPreferred";
+        opt.options.useUnifiedTopology = true;
     }
 
     return opt;

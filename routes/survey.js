@@ -25,6 +25,7 @@ const { expressCaller } = require("../modules/helpers");
 // const { insertWishlistTrack, deleteWishlistTrack, getWishlistTracksSummary, getWishlistTracks } = require("../modules/library/wishlist/tracks");
 // const { registerKinUser, getKinUserAccount, kinWhiteList } = require("../modules/kin");
 // const CheckInLocations = require("../modules/checkInLocations");
+const survey = require("../modules/survey");
 
 /**
  * Settings API
@@ -263,5 +264,17 @@ const { expressCaller } = require("../modules/helpers");
 // router.post("/kin-whitelist", expressCaller(kinWhiteList));
 // router.get("/checkin/locations", expressCaller(CheckInLocations.getCheckInLocations));
 // router.post("/checkin/locations", expressCaller(CheckInLocations.insertCheckInLocations));
+
+// router.post("/create", async (req, res, next) => {
+//     try {
+//         res.send(await messagesFunc.compose(req));
+//     }
+//     catch (err) {
+//         console.log("error", err);
+//         next(err);
+//     }
+// });
+
+router.post("/create", expressCaller(survey.create));
 
 module.exports = router;

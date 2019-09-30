@@ -20,10 +20,12 @@ const makeLowerCase = require("./modules/helpers").makeReqVariablesLowercase;
 // const routes = require("./routes/routes");
 // const mix = require("./routes/mix");
 // const resource = require("./routes/resource");
-const api = require("./routes/api");
+// const api = require("./routes/api");
 // const playlists = require("./routes/playlists");
 // const users = require("./routes/users");
 // const authRouter = require("./routes/auth");
+const survey = require("./routes/survey");
+const resource = require("./routes/resource");
 
 // const { parseAcceptLanguage } = require("./middleware/language");
 // require("./events/listeners/index");
@@ -73,6 +75,8 @@ app.use((req, res, next) => {
 //
 // /* Routes */
 // app.use("/api", api);
+app.use("/survey", survey);
+app.use("/resource", resource);
 // app.use("/api/users", users);
 // app.use("/mix", mix);
 // app.use("/resource", resource);
