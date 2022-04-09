@@ -15,7 +15,7 @@
     "express-jwt": "^5.3.1",
     "globals": "^12.1.0",
     "gridfs-stream": "^1.1.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "mongoose": "^5.7.1",
     "morgan": "^1.9.1",
     "stream-buffers": "^3.0.2",
